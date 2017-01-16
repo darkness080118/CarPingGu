@@ -1,0 +1,162 @@
+﻿@using Wesalt.Basis.Tools
+@model CarPingGu.Models.CarPingGuJson
+@{
+    Layout = null;
+}
+\<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <link href="/Content/carContent.css" rel="stylesheet" />
+    <title>评估结果</title>
+</head>
+<body>
+    <div>
+        <div class="car-title1"><span>评估结果</span><a href="javascript:window.history.go(-1)"><span class="icon-angle-left icon1"></span></a></div>
+        <div class="resultTop">
+            <span>
+                @Model.head
+            </span>
+        </div>
+        <div class="resultPrice">
+            <div class="price_1">
+                <span>预估成交价格</span>
+                <span>￥@Model.price</span>
+            </div>
+            <div class="price_2">
+                <span>合理价格区间</span>
+                <span>@(DataTools.ChangeMoney(Convert.ToDouble(Model.low_price)))-@(DataTools.ChangeMoney(Convert.ToDouble(Model.low_price)))万元</span>
+            </div>
+        </div>
+        <div class="resultContent">
+            <div class="content_1">
+                <span>@(Model.factory_price_title)：<span>@(Model.factory_price)万</span></span>
+                <span>行驶里程：<span>@(DataTools.ChangeMoney(Convert.ToDouble(Model.kilometer)))万公里</span></span>
+            </div>
+            <div class="content_2">
+                <span>上牌时间：<span>@(Model.year)-@(Model.month)</span></span>
+                <span>车辆属地：<span>@(Model.city)地区</span></span>
+            </div>
+        </div>
+        <div class="resultImg">
+            <img class="imgTitle_1" src="/Images/result.png" />
+            <div class="price">
+                <div class="text1">
+                    <span> 预计成交价</span>
+                </div>
+                <div class="text2"><span>@(DataTools.ChangeMoney(Convert.ToDouble(Model.price_c)))万</span> </div>
+                <div class="arrow"></div>
+            </div>
+            <div class="price1">
+                <div class="text1">
+                    <span> 预估最低成交价</span>
+                </div>
+                <div class="text3"><span>@(DataTools.ChangeMoney(Convert.ToDouble(Model.low_price)))万</span> </div>
+                <div class="arrow1"></div>
+            </div>
+            <div class="price2">
+                <div class="text1">
+                    <span> 预估最高成交价</span>
+                </div>
+                <div class="text4"><span>@(DataTools.ChangeMoney(Convert.ToDouble(Model.high_price)))万</span> </div>
+                <div class="arrow2"></div>
+            </div>
+        </div>
+        <div class="resultPing">
+            @*<div class="resultJia">
+                <span>你觉得价格：</span>
+                <span>偏低</span>
+                <span>适中</span>
+                <span>偏高</span>
+            </div>*@
+            <div class="resultList">
+                <div class="resultEx">评估结果相近车辆 </div>
+                @{
+                    var data = ViewBag.SimilarCar.Data;
+                }
+                @if (data.data.total == 0)
+                {
+                    <div class="noresult text-center">
+                        <span>暂无详细车辆数据</span>
+                    </div>
+                }
+                @if (data.errorCode != 0)
+                {
+                    <div class="noresult text-center">
+                        <span>数据获取失败，请稍后再试</span>
+                    </div>
+                }
+                else
+                {
+                    foreach (var item in data.data.info)
+                    {
+                        string img = item.cover_photo.ToString();
+                        string temp = item.title.ToString();
+                        string temp2 = item.title.ToString();
+                        string[] split = null;
+                        if (temp.Contains("-"))
+                        {
+                            split = temp.Split('-');
+                        }else if(temp.Contains(" "))
+                        {
+                            split = temp.Split(' ');
+                        }
+                        if (img.Contains(".jpg"))
+                        {
+                            img = img.Replace(".jpg", "_200-152c_6_0_0.jpg");
+                        }
+                        else if(img.Contains(".JPG"))
+                        {
+                            img = img.Replace(".JPG", "_200-152c_6_0_0.JPG");
+                        }
+                        <div class="list1">
+                            <div class="resultTime">@(DataTools.FormatDate(DataTools.GetTime(item.create_time.ToString()).ToString(),0))发布</div>
+                            <div class="resultIcon">
+                                <img src="http://image.273.com.cn/@img"/>
+                                @if (split.Length == 2)
+                                {
+                                    <span>@split.First()</span>
+                                    <br/>
+                                    <span>@split[1]</span>
+                                    <br/>
+                                }
+                                else if (split.Length == 1)
+                                {
+                                    <span></span>
+                                    <br/>
+                                    <span>@split[0]</span>
+                                    <br/>
+                                }
+                                else
+                                {
+                                    temp2 = temp2.Replace(split.First(), "");
+                                    <span>@split.First()</span>
+                                    <br/>
+                                    <span>@(temp2)</span>
+                                    <br />
+                                }
+                                <span>@(DataTools.ChangeMoney(Convert.ToDouble(item.kilometer)))万公里/@(DataTools.FormatDate(DataTools.GetTime(item.create_time.ToString()).ToString(), 3))年</span><br />
+                                <span>￥@(DataTools.ChangeMoney(Convert.ToDouble(item.price)))万元</span>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <div class="resultfooter">
+            <div class="btn_1">
+                <span>评估价<span>￥@(DataTools.ChangeMoney(Convert.ToDouble(Model.price_c)))万 </span></span>
+            </div>
+            <a href="@Url.Action("Index")">
+            <div class="btn_2">
+                <span>重新查询</span>
+            </div>
+                </a>
+</div>
+    </div>
+</body>
+</html>
+

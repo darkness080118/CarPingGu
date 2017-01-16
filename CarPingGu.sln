@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPingGu", "CarPingGu\CarPingGu.csproj", "{B49EBB9A-CD31-4B42-B7D0-6197B2248207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPingGu.Tests", "CarPingGu.Tests\CarPingGu.Tests.csproj", "{684E71DE-F114-4A9E-BDD1-370A4D2F8E5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wesalt.Basis.Tools", "Wesalt.Basis.Tools\Wesalt.Basis.Tools.csproj", "{DC18A08A-979A-45F0-8384-F3CEFA842FFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B49EBB9A-CD31-4B42-B7D0-6197B2248207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49EBB9A-CD31-4B42-B7D0-6197B2248207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49EBB9A-CD31-4B42-B7D0-6197B2248207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49EBB9A-CD31-4B42-B7D0-6197B2248207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{684E71DE-F114-4A9E-BDD1-370A4D2F8E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{684E71DE-F114-4A9E-BDD1-370A4D2F8E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{684E71DE-F114-4A9E-BDD1-370A4D2F8E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{684E71DE-F114-4A9E-BDD1-370A4D2F8E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC18A08A-979A-45F0-8384-F3CEFA842FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC18A08A-979A-45F0-8384-F3CEFA842FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC18A08A-979A-45F0-8384-F3CEFA842FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC18A08A-979A-45F0-8384-F3CEFA842FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,55 @@
+﻿@using Wesalt.Basis.Tools
+@model CarPingGu.Models.CarPingGuJson
+@{
+    Layout = null;
+}
+\<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <link href="/Content/carContent.css" rel="stylesheet" />
+    <title>评估结果</title>
+</head>
+<body>
+    <div>
+        <div class="car-title1"><span>评估结果</span><a href="javascript:window.history.go(-1)"><span class="icon-angle-left icon1"></span></a>
+        </div>
+        <div class="resultTop">
+            <span>
+                暂无数据
+            </span>
+        </div>
+        <div class="resultPrice">
+            <div class="price_1">
+                <span>预估成交价格</span>
+                <span style="color:black!important">暂无</span>
+            </div>
+            <div class="price_2">
+                <span>合理价格区间</span>
+                <span>暂无</span>
+            </div>
+        </div>
+        <div class="resultContent">
+            <div class="content_1">
+                <span>厂家指导价：<span>暂无</span></span>
+                <span>行驶里程：<span>暂无</span></span>
+            </div>
+            <div class="content_2">
+                <span>上牌时间：<span>暂无</span></span>
+                <span>车辆属地：<span>暂无</span></span>
+            </div>
+        </div>
+        <div class="resultPing" style="background-color:white !important">
+            <div class="resultErro">
+                <img src="/Images/ic_price_filter.png" />
+                <span>抱歉,无法评估出该车价格</span><br />
+                <span>该车属于冷门车型，我们暂时无法评估出该车价格</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
