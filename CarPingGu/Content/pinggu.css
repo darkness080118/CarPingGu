@@ -1200,7 +1200,7 @@ a.a-success {
             top: 1px;
             left: 1em;
             width: 80%;
-            height: 224px;
+            height: 7.5em;
             overflow-x: hidden;
             overflow-y: auto;
             background: #fff;
@@ -1229,7 +1229,6 @@ a.a-success {
     float: left;
     width: 55%;
     height: 2.5em;
-    margin-top: 0.2em;
     margin-left: 1.5em;
     border: 1px solid #d4d4d4;
 }
@@ -1263,7 +1262,7 @@ a.a-success {
         line-height: 32px;*/
         position: absolute;
         right: 0.5em;
-        line-height: 1.2em;
+        line-height: 1.5em;
         font-size: 1.5em;
     }
 

@@ -16,13 +16,14 @@
     <link href="/Content/vehicle1.css" rel="stylesheet" type="text/css">
     <link href="/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="/Content/carContent.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
     <script src="/Scripts/g.js" type="text/javascript"></script>
     <script src="/Scripts/config.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="wrap">
         <!--二手车行情--><div class="assess">
-            <div class="car-title"><span>车价评估</span><span></span> </div>
+            <div class="car-title"><span>车价评估</span><span class=" icon-angle-left hidden icon2" id="icon2"></span></div>
             <div><img class="imgTitle" src="/Images/car.png" /></div>
             <div class="contents">
                 <form class="iform" id="pinggu_list_form" action="@Url.Action("GetResult")" method="post">
@@ -31,17 +32,18 @@
                             <em>车型品牌</em>
                             <div id="vehicle-type" class="vehicle"></div>
                             <div id="vehicle-brand" class="vehicle">
-                                <input type="text" onclick="brandBtn()" id="brandID" readonly="readonly" name="brand_name" value="请选择品牌" />
+                                <input type="text" id="brandID" readonly="readonly" name="brand_name" value="请选择品牌" />
                                 <input type="hidden" name="brand_id" />
                                 <div class="vehicle-outer">
-                                    <div class="vehicle-inner brand_1"></div>
+                                    <div class="vehicle-inner brand_1">
+                                    </div>
                                 </div>
                             </div>
                         </li>
                         <li class="cars ">
                             <em>车　系</em>
                             <div id="vehicle-series" class="vehicle">
-                                <input type="text" readonly="readonly" id="carsID" disabled="disabled" name="series_name" value="请选择车系" />
+                                <input type="text" readonly="readonly" id="carsID" name="series_name" value="请选择车系" />
                                 <input type="hidden" name="series_id" />
                                 <div class="vehicle-outer">
                                     <div class="vehicle-inner cars_1"></div>
@@ -51,7 +53,7 @@
                         <li class="car">
                             <em>车　型</em>
                             <div id="vehicle-model" class="vehicle">
-                                <input type="text" readonly="readonly" id="carID" disabled="disabled" name="model_name" value="请选择车型" autocomplete="off" style="width: 100%;" />
+                                <input type="text" readonly="readonly" id="carID" name="model_name" value="请选择车型" style="width: 100%;" />
                                 <input type="hidden" name="model_id" />
                                 <div class="vehicle-outer">
                                     <div class="vehicle-inner car_1" style="width: 100%;"></div>
@@ -118,10 +120,10 @@
                         <li class="city">
                             <em>车辆属地</em>
                             <div class="vehicle js_select_province" style="width:31%">
-                                <input type="text" name="city_full" value="省份" readonly="readonly" />
+                                <input type="text" value="省份" id="province" readonly="readonly" />
                                 <input type="hidden" name="province" />
                                 <div class="vehicle-outer">
-                                    <div class="vehicle-inner" style="display:none">
+                                    <div id="province_flag" class="vehicle-inner province " style="display:none">
                                         <ul>
                                             <li><a href="javascript:;" data-value="浙江" data-id="18">浙江</a></li>
                                             <li><a href="javascript:;" data-value="福建" data-id="12">福建</a></li>
@@ -159,10 +161,10 @@
                                 </div>
                             </div>
                             <div class="vehicle right js_select_city" style="width:35% !important;float: left">
-                                <input type="text" name="city_full" value="城市" readonly="readonly" />
+                                <input type="text" name="city_full" value="城市" id="city" disabled="disabled" readonly="readonly" />
                                 <input type="hidden" name="city" />
                                 <div class="vehicle-outer">
-                                    <div class="vehicle-inner" style="display:none">
+                                    <div id="city_flag" class="vehicle-inner city" style="display:none">
                                         <ul></ul>
                                     </div>
                                 </div>
@@ -202,5 +204,6 @@
     </script>
 </body>
 </html>
+
 
 
