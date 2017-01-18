@@ -3,27 +3,27 @@
 .brand_1 {
     position: absolute !important;
     background: white !important;
-    top: -19.5em !important;
-    height: 41.5em !important;
-    padding: 1em 0em 1em 2em;
+    top: -18em !important;
+    height: 42.5em !important;
+    padding: 2.3em 0em 1em 2em;
     overflow-x: hidden;
 }
 
 .cars_1 {
     position: absolute !important;
     background: white !important;
-    top: -22em !important;
-    height: 41.5em !important;
-    padding: 1em 0em 1em 2em;
+    top: -20.5em !important;
+    height: 42.6em !important;
+    padding: 2.5em 0em 1em 2em;
     overflow-x: hidden;
 }
 
 .car_1 {
     position: absolute !important;
     background: white !important;
-    top: -25em !important;
-    height: 41.5em !important;
-    padding: 1em 0em 1em 2em;
+    top: -23.5em !important;
+    height: 43.5em !important;
+    padding: 3.1em 0em 1em 2em;
     overflow-x: hidden;
 }
 
